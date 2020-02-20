@@ -69,8 +69,8 @@
           m.classList.add('left');
         }
       } else {
-        var top = m.classList.contains('down') ?  distance + 10 :  distance -10;
-        var left = m.classList.contains('right') ? distance - 10 : distance + 10;
+        var top = m.classList.contains('down') ?  m.style.top+distance :  m.getBoundingClientReact().top() - distance;
+        var left = m.classList.contains('right') ? m.style.left+distance :  m.getBoundingClientReact().left() - distance;
         if (top < 0) top = 0;
         if (top > maxHeight) top = maxHeight;
         m.style.top = top + 'px';
